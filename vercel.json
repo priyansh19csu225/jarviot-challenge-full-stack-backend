@@ -2,9 +2,24 @@
     "version": 2,
     "name": "jarviot-challenge-full-stack-backend",
     "builds": [
-       { "src": "index.js", "use": "@vercel/node" }
+      {
+        "src": "vercel-build.js",
+        "use": "@vercel/node"
+      },
+      {
+        "src": "index.js",
+        "use": "@vercel/node"
+      }
     ],
     "routes": [
-       { "src": "/(.*)", "dest": "/index.js" }
+      {
+        "src": "/vercel-build.js", 
+        "dest": "/vercel-build.js" 
+      },
+      {
+        "src": "/(.*)",
+        "dest": "/index.js"
+      }
     ]
- }
+  }
+  
